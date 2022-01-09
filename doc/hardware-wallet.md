@@ -29,7 +29,7 @@ The staking will be active until the application is closed and will be automatic
 
 ## Command line interface for hardware device staking
 
-`qtumd -hwitoolpath=<HWI Tool Path> -stakerledgerid=<Ledger device for staking> -wallet <Hardware wallet>`
+`vuicashd -hwitoolpath=<HWI Tool Path> -stakerledgerid=<Ledger device for staking> -wallet <Hardware wallet>`
 
 `<HWI Tool Path>` is the location where the HWI is installed. In GUI, the value in menu `Settings -> Option -> Main -> HWI Tool Path`.
 

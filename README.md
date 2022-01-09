@@ -56,7 +56,7 @@ Developer's Tools
   * https://github.com/vuicash/qtumjs
 * A toolkit for building qtum light wallets
   * https://github.com/vuicash/qtumjs-wallet
-* CORS qtumd RPC proxy for DApp
+* CORS vuicashd RPC proxy for DApp
   * https://github.com/vuicash/qtumportal
 * Docker images for running qtum services
   * https://github.com/vuicash/qtum-docker
@@ -239,7 +239,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 ### Run
 
-Then you can either run the command-line daemon using `src/qtumd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+Then you can either run the command-line daemon using `src/vuicashd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
 
 License
 -------

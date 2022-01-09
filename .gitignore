@@ -148,7 +148,7 @@ dist/
 .settings/language.settings.xml
 src/qtum-cli
 src/qtum-tx
-src/qtumd
+src/vuicashd
 src/qtum-wallet
 src/bench/bench_qtum
 src/qt/qtum-qt

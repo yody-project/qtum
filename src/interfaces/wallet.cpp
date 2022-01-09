@@ -22,7 +22,7 @@
 #include <wallet/rpcwallet.h>
 #include <wallet/wallet.h>
 #include <key_io.h>
-#include <qtum/qtumdelegation.h>
+#include <qtum/vuicashdelegation.h>
 #include <miner.h>
 
 #include <memory>

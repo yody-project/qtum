@@ -16,7 +16,7 @@ The following are some helpful notes on how to run VuiCash Core on your native p
 Unpack the files into a directory and run:
 
 - `bin/qtum-qt` (GUI) or
-- `bin/qtumd` (headless)
+- `bin/vuicashd` (headless)
 
 ### Windows
 

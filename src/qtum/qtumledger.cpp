@@ -93,7 +93,7 @@ bool isPyPath(const std::string& str)
 }
 #endif
 
-// Start process from qtumd
+// Start process from vuicashd
 class CProcess
 {
 public:

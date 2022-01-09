@@ -26,7 +26,7 @@
 #include <wallet/walletutil.h>
 #include <consensus/params.h>
 #include <pos.h>
-#include <qtum/qtumdelegation.h>
+#include <qtum/vuicashdelegation.h>
 
 #include <algorithm>
 #include <atomic>

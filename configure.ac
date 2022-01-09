@@ -14,7 +14,7 @@ AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=qtumd
+BITCOIN_DAEMON_NAME=vuicashd
 BITCOIN_GUI_NAME=qtum-qt
 BITCOIN_CLI_NAME=qtum-cli
 BITCOIN_TX_NAME=qtum-tx

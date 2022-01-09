@@ -15,7 +15,7 @@
 #include <script/sign.h>
 #include <consensus/consensus.h>
 #include <util/signstr.h>
-#include <qtum/qtumdelegation.h>
+#include <qtum/vuicashdelegation.h>
 
 using namespace std;
 

@@ -766,7 +766,7 @@ std::vector<std::string> getListArgsType()
 UniValue listconf(const JSONRPCRequest& request)
 {
             RPCHelpMan{"listconf",
-                "\nReturns the current options that qtumd was started with.\n",
+                "\nReturns the current options that vuicashd was started with.\n",
                 {},
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",

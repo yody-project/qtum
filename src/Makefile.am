@@ -92,7 +92,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += qtumd
+  bin_PROGRAMS += vuicashd
 endif
 
 if BUILD_BITCOIN_CLI
@@ -276,7 +276,7 @@ BITCOIN_CORE_H = \
   qtum/qtumDGP.h \
   qtum/storageresults.h \
   qtum/qtumutils.h \
-  qtum/qtumdelegation.h \
+  qtum/vuicashdelegation.h \
   qtum/qtumtoken.h \
   qtum/qtumledger.h
 
@@ -346,7 +346,7 @@ libbitcoin_server_a_SOURCES = \
   qtum/qtumtransaction.cpp \
   consensus/consensus.cpp \
   qtum/storageresults.cpp \
-  qtum/qtumdelegation.cpp \
+  qtum/vuicashdelegation.cpp \
   qtum/qtumtoken.cpp \
   qtum/qtumledger.cpp \
   $(BITCOIN_CORE_H)
@@ -856,16 +856,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-qtumd_SOURCES = bitcoind.cpp
-qtumd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-qtumd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-qtumd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+vuicashd_SOURCES = bitcoind.cpp
+vuicashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+vuicashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+vuicashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-qtumd_SOURCES += bitcoind-res.rc
+vuicashd_SOURCES += bitcoind-res.rc
 endif
 
-qtumd_LDADD = \
+vuicashd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_SERVER) \
@@ -882,7 +882,7 @@ qtumd_LDADD = \
   $(LIBFF) \
   $(LIBSECP256K1)
 
-qtumd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS) $(GMPXX_LIBS)
+vuicashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(GMP_LIBS) $(GMPXX_LIBS)
 
 # bitcoin-cli binary #
 qtum_cli_SOURCES = bitcoin-cli.cpp

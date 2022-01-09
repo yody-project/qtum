@@ -161,7 +161,7 @@ To build with Qt 5 (recommended) you need the following:
 
 Notes
 -----
-The release is built with GCC and then "strip qtumd" to strip the debug
+The release is built with GCC and then "strip vuicashd" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
