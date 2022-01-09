@@ -23,10 +23,10 @@ bool AbiOutEvent(FunctionABI* func, const std::vector<std::string>& topics, cons
     return func->abiOut(topics, data, values, errors);
 }
 
-class QtumDelegationPriv
+class VuiCashDelegationPriv
 {
 public:
-    QtumDelegationPriv():
+    VuiCashDelegationPriv():
         m_pfDelegations(0),
         m_pfAddDelegationEvent(0),
         m_pfRemoveDelegationEvent(0)
@@ -56,7 +56,7 @@ public:
         assert(m_pfRemoveDelegationEvent);
     }
 
-    virtual ~QtumDelegationPriv()
+    virtual ~VuiCashDelegationPriv()
     {
         if(m_pfDelegations)
             delete m_pfDelegations;
@@ -155,20 +155,20 @@ public:
     dev::Address delegationsAddress;
 };
 
-QtumDelegation::QtumDelegation():
+VuiCashDelegation::VuiCashDelegation():
     priv(0)
 {
-    priv = new QtumDelegationPriv();
+    priv = new VuiCashDelegationPriv();
 }
 
-QtumDelegation::~QtumDelegation()
+VuiCashDelegation::~VuiCashDelegation()
 {
     if(priv)
         delete priv;
     priv = 0;
 }
 
-bool QtumDelegation::GetDelegation(const uint160 &address, Delegation &delegation) const
+bool VuiCashDelegation::GetDelegation(const uint160 &address, Delegation &delegation) const
 {
     // Contract exist check
     if(!ExistDelegationContract())
@@ -244,7 +244,7 @@ bool QtumDelegation::GetDelegation(const uint160 &address, Delegation &delegatio
     return true;
 }
 
-bool QtumDelegation::VerifyDelegation(const uint160 &address, const Delegation &delegation)
+bool VuiCashDelegation::VerifyDelegation(const uint160 &address, const Delegation &delegation)
 {
     if(address == uint160() || delegation.IsNull() || delegation.fee > 100)
         return false;
@@ -252,7 +252,7 @@ bool QtumDelegation::VerifyDelegation(const uint160 &address, const Delegation &
     return SignStr::VerifyMessage(CKeyID(address), delegation.staker.GetReverseHex(), delegation.PoD);
 }
 
-bool QtumDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &events, const IDelegationFilter &filter, int fromBlock, int toBlock, int minconf) const
+bool VuiCashDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &events, const IDelegationFilter &filter, int fromBlock, int toBlock, int minconf) const
 {
     // Check if log events are enabled
     if(!fLogEvents)
@@ -313,14 +313,14 @@ bool QtumDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &events
     return true;
 }
 
-std::map<uint160, Delegation> QtumDelegation::DelegationsFromEvents(const std::vector<DelegationEvent> &events)
+std::map<uint160, Delegation> VuiCashDelegation::DelegationsFromEvents(const std::vector<DelegationEvent> &events)
 {
     std::map<uint160, Delegation> delegations;
     UpdateDelegationsFromEvents(events, delegations);
     return delegations;
 }
 
-void QtumDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEvent> &events, std::map<uint160, Delegation> &delegations)
+void VuiCashDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEvent> &events, std::map<uint160, Delegation> &delegations)
 {
     for(const DelegationEvent& event : events)
     {
@@ -343,18 +343,18 @@ void QtumDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEve
     }
 }
 
-bool QtumDelegation::ExistDelegationContract() const
+bool VuiCashDelegation::ExistDelegationContract() const
 {
     // Delegation contract exist check
     return globalState && globalState->addressInUse(priv->delegationsAddress);
 }
 
-std::string QtumDelegation::BytecodeRemove()
+std::string VuiCashDelegation::BytecodeRemove()
 {
     return DelegationABI()["removeDelegation"].selector();
 }
 
-bool QtumDelegation::BytecodeAdd(const std::string &hexStaker, const int &fee, const std::vector<unsigned char> &PoD, std::string &datahex, std::string &errorMessage)
+bool VuiCashDelegation::BytecodeAdd(const std::string &hexStaker, const int &fee, const std::vector<unsigned char> &PoD, std::string &datahex, std::string &errorMessage)
 {
     FunctionABI func = DelegationABI()["addDelegation"];
     std::vector<std::vector<std::string>> values;
@@ -397,7 +397,7 @@ bool QtumDelegation::BytecodeAdd(const std::string &hexStaker, const int &fee, c
     return true;
 }
 
-bool QtumDelegation::IsAddBytecode(const std::vector<unsigned char> &data)
+bool VuiCashDelegation::IsAddBytecode(const std::vector<unsigned char> &data)
 {
     // Quick check for is set delegate address
     size_t size = data.size();
@@ -408,7 +408,7 @@ bool QtumDelegation::IsAddBytecode(const std::vector<unsigned char> &data)
     return true;
 }
 
-bool QtumDelegation::GetUnsignedStaker(const std::vector<unsigned char> &data, std::string &hexStaker)
+bool VuiCashDelegation::GetUnsignedStaker(const std::vector<unsigned char> &data, std::string &hexStaker)
 {
     if(!IsAddBytecode(data))
         return false;
@@ -448,7 +448,7 @@ bool QtumDelegation::GetUnsignedStaker(const std::vector<unsigned char> &data, s
     return false;
 }
 
-bool QtumDelegation::SetSignedStaker(std::vector<unsigned char> &data, const std::string &base64PoD)
+bool VuiCashDelegation::SetSignedStaker(std::vector<unsigned char> &data, const std::string &base64PoD)
 {
     if(!IsAddBytecode(data))
         return false;

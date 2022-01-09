@@ -43,17 +43,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-## Build Qtum Core
+## Build VuiCash Core
 
-1. Clone the Qtum Core source code:
+1. Clone the VuiCash Core source code:
     ```shell
     git clone --recursive https://github.com/qtumproject/qtum.git
     cd qtum
     ```
 
-2.  Build Qtum Core:
+2.  Build VuiCash Core:
 
-    Configure and build the headless Qtum Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless VuiCash Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
     ```shell
@@ -84,15 +84,15 @@ In this case there is no dependency on Berkeley DB 4.8.
 Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC call.
 
 ## Running
-Qtum Core is now available at `./src/qtumd`
+VuiCash Core is now available at `./src/qtumd`
 
 Before running, you may create an empty configuration file:
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/Qtum"
+mkdir -p "/Users/${USER}/Library/Application Support/VuiCash"
 
-touch "/Users/${USER}/Library/Application Support/Qtum/qtum.conf"
+touch "/Users/${USER}/Library/Application Support/VuiCash/qtum.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Qtum/qtum.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/VuiCash/qtum.conf"
 ```
 
 The first time you run qtumd, it will start downloading the blockchain. This process could
@@ -100,7 +100,7 @@ take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 ```shell
-tail -f $HOME/Library/Application\ Support/Qtum/debug.log
+tail -f $HOME/Library/Application\ Support/VuiCash/debug.log
 ```
 
 ## Other commands:
