@@ -29,9 +29,9 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/qtumproject/qtum.git"
+- "url": "https://github.com/vuicash/qtum.git"
   "dir": "qtum"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
+- "url": "https://github.com/vuicash/cpp-eth-qtum.git"
   "dir": "cpp-eth-qtum"
 files:
 - "MacOSX10.14.sdk.tar.gz"

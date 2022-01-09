@@ -47,7 +47,7 @@ from the root of the repository.
 
 1. Clone the VuiCash Core source code:
     ```shell
-    git clone --recursive https://github.com/qtumproject/qtum.git
+    git clone --recursive https://github.com/vuicash/qtum.git
     cd qtum
     ```
 

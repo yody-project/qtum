@@ -22,12 +22,12 @@ These are some resources that might be helpful in understanding VuiCash.
 Basic usage resources:
 
 * [User guide](https://docs.qtum.site/en/)
-* [VuiCash-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/VuiCash-Wallet-Tutorial#qtum-qt-wallet-tutorial)
-* [VuiCash staking tutorial](https://github.com/qtumproject/documents/tree/master/en/How-to-Stake-with-VuiCash)
-* [VuiCash tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/VuiCash-on-Raspberry-Pi)
-* [Running VuiCash on Amazon AWS using VuiCash AMI](https://github.com/qtumproject/documents/tree/master/en/VuiCash-AWS)
-* [Encrypting and unlocking wallet](https://github.com/qtumproject/documents/tree/master/en/Encrypt-and-Unlock-VuiCash-Wallet)
-* [Testnet guide](https://github.com/qtumproject/documents/blob/master/en/Testnet-User-Guide.md)
+* [VuiCash-Qt Wallet Tutorial](https://github.com/vuicash/documents/tree/master/en/VuiCash-Wallet-Tutorial#qtum-qt-wallet-tutorial)
+* [VuiCash staking tutorial](https://github.com/vuicash/documents/tree/master/en/How-to-Stake-with-VuiCash)
+* [VuiCash tutorial on Raspberry Pi](https://github.com/vuicash/documents/tree/master/en/VuiCash-on-Raspberry-Pi)
+* [Running VuiCash on Amazon AWS using VuiCash AMI](https://github.com/vuicash/documents/tree/master/en/VuiCash-AWS)
+* [Encrypting and unlocking wallet](https://github.com/vuicash/documents/tree/master/en/Encrypt-and-Unlock-VuiCash-Wallet)
+* [Testnet guide](https://github.com/vuicash/documents/blob/master/en/Testnet-User-Guide.md)
 * [Block explorer](https://qtum.info), [Older explorer](https://explorer.qtum.org)
 
 
@@ -36,7 +36,7 @@ Development resources:
 * [VuiCash Book - A Developer's Guide To QTUM](http://book.qtum.site/en/)
 * [VuiCash contract usage](https://docs.qtum.site/en/QRC20-Token-Introduce.html)
 * [Deploying a custom token to VuiCash](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [VuiCashJS document](https://qtumproject.github.io/qtumjs-doc/)
+* [VuiCashJS document](https://vuicash.github.io/qtumjs-doc/)
 * [Smart contract ICO example](http://book.qtum.site/en/part3/ico.htm)
 * [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
 
@@ -51,17 +51,17 @@ Developer's Tools
 -----------------
 
 * Smart contract deployment tool
-  * https://github.com/qtumproject/solar
+  * https://github.com/vuicash/solar
 * DApp JavaScript Library
-  * https://github.com/qtumproject/qtumjs
+  * https://github.com/vuicash/qtumjs
 * A toolkit for building qtum light wallets
-  * https://github.com/qtumproject/qtumjs-wallet
+  * https://github.com/vuicash/qtumjs-wallet
 * CORS qtumd RPC proxy for DApp
-  * https://github.com/qtumproject/qtumportal
+  * https://github.com/vuicash/qtumportal
 * Docker images for running qtum services
-  * https://github.com/qtumproject/qtum-docker
+  * https://github.com/vuicash/qtum-docker
 * qtum.info API that powers the block explorer and the QTUM Web wallet
-  * https://github.com/qtumproject/qtuminfo-api#qtuminfo-api-documentation
+  * https://github.com/vuicash/qtuminfo-api#qtuminfo-api-documentation
 
 
 What is VuiCash Core?
@@ -93,13 +93,13 @@ A browser wallet that supports the Ledger hardware wallet, offline cold wallet, 
 
 Web site https://qtumwallet.org
 
-User documentation https://github.com/qtumproject/documents/tree/master/en/QTUM-WebWallet-usage
+User documentation https://github.com/vuicash/documents/tree/master/en/QTUM-WebWallet-usage
 
 ### VuiCash Electrum
 
 A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software. 
 
-Download: https://github.com/qtumproject/qtum-electrum/releases
+Download: https://github.com/vuicash/qtum-electrum/releases
 
 ### iOS and Android Wallets
 
@@ -107,7 +107,7 @@ These wallets run on mobile devices and synchronize quickly.
 
 Android Download: https://play.google.com/store/apps/details?id=org.qtum.newwallet
 
-iOS Download: https://github.com/qtumproject/qtum-ios (open source, deprecated)
+iOS Download: https://github.com/vuicash/qtum-ios (open source, deprecated)
 
 ### Ledger Chrome Wallet
 
@@ -143,7 +143,7 @@ Make sure to check out these resources as well for more information and to keep 
 
 ### Validate and Reproduce Binaries
 
-VuiCash uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building VuiCash are provided in [Gitan Building](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)
+VuiCash uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building VuiCash are provided in [Gitan Building](https://github.com/vuicash/qtum/blob/master/doc/gitian-building.md)
 
 ### Build on Ubuntu
 
@@ -159,7 +159,7 @@ This is a quick start script for compiling VuiCash on Ubuntu
     # If you want to build the Qt GUI:
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
 
-    git clone https://github.com/qtumproject/qtum --recursive
+    git clone https://github.com/vuicash/qtum --recursive
     cd qtum
 
     # Note autogen will prompt to install some more dependencies if needed
@@ -169,7 +169,7 @@ This is a quick start script for compiling VuiCash on Ubuntu
     
 ### Build on CentOS
 
-Here is a brief description for compiling VuiCash on CentOS, for more details please refer to [the specific document](https://github.com/qtumproject/qtum/blob/master/doc/build-unix.md)
+Here is a brief description for compiling VuiCash on CentOS, for more details please refer to [the specific document](https://github.com/vuicash/qtum/blob/master/doc/build-unix.md)
 
     # Compiling boost manually
     sudo yum install python-devel bzip2-devel
@@ -189,7 +189,7 @@ Here is a brief description for compiling VuiCash on CentOS, for more details pl
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
     
     # Building VuiCash
-    git clone --recursive https://github.com/qtumproject/qtum.git
+    git clone --recursive https://github.com/vuicash/qtum.git
     cd qtum
     ./autogen.sh
     ./configure
@@ -220,7 +220,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 1. Clone the qtum source code and cd into `qtum`
 
-        git clone --recursive https://github.com/qtumproject/qtum.git
+        git clone --recursive https://github.com/vuicash/qtum.git
         cd qtum
 
 2.  Build qtum-core:
@@ -250,10 +250,10 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/qtumproject/qtum/tags) are created
+completely stable. [Tags](https://github.com/vuicash/qtum/tags) are created
 regularly to indicate new official, stable release versions of VuiCash.
 
-The contribution workflow is described in [CONTRIBUTING.md](https://github.com/qtumproject/qtum/blob/master/CONTRIBUTING.md)
+The contribution workflow is described in [CONTRIBUTING.md](https://github.com/vuicash/qtum/blob/master/CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
 
 Testing

@@ -38,9 +38,9 @@ packages:
 - "libmicrohttpd-dev"
 - "libminiupnpc-dev"
 remotes:
-- "url": "https://github.com/qtumproject/qtum.git"
+- "url": "https://github.com/vuicash/qtum.git"
   "dir": "qtum"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
+- "url": "https://github.com/vuicash/cpp-eth-qtum.git"
   "dir": "cpp-eth-qtum"
 files: []
 script: |

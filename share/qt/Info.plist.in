@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.qtumproject.VuiCash-Qt</string>
+  <string>org.vuicash.VuiCash-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
