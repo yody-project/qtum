@@ -100,7 +100,7 @@ UniValue getdgpinfo(const JSONRPCRequest& request)
 
     LOCK(cs_main);
 
-    QtumDGP qtumDGP(globalState.get());
+    VuiCashDGP qtumDGP(globalState.get());
 
     UniValue obj(UniValue::VOBJ);
     obj.pushKV("maxblocksize", (uint64_t)qtumDGP.getBlockSize(::ChainActive().Height()));

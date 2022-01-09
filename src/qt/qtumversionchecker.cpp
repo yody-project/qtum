@@ -10,23 +10,23 @@
 
 #define paternVersion "qtum-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
-QtumVersionChecker::QtumVersionChecker(QObject *parent) : QObject(parent)
+VuiCashVersionChecker::VuiCashVersionChecker(QObject *parent) : QObject(parent)
 {
     currentVersion = Version(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION);
 }
 
-QtumVersionChecker::~QtumVersionChecker()
+VuiCashVersionChecker::~VuiCashVersionChecker()
 {
 
 }
 
-bool QtumVersionChecker::newVersionAvailable()
+bool VuiCashVersionChecker::newVersionAvailable()
 {
     Version maxReleaseVersion = getMaxReleaseVersion();
     return maxReleaseVersion > currentVersion;
 }
 
-QList<Version> QtumVersionChecker::getVersions()
+QList<Version> VuiCashVersionChecker::getVersions()
 {
     QNetworkAccessManager manager;
     QNetworkReply *response = manager.get(QNetworkRequest(QUrl(QTUM_RELEASES)));
@@ -52,7 +52,7 @@ QList<Version> QtumVersionChecker::getVersions()
     return versions;
 }
 
-Version QtumVersionChecker::getMaxReleaseVersion()
+Version VuiCashVersionChecker::getMaxReleaseVersion()
 {
     QList<Version> versions = getVersions();
     Version maxVersion;

@@ -38,30 +38,30 @@ Token::Token()
 
     // Create new call command line interface
     QStringList lstMandatory;
-    lstMandatory.append(QtumToken::paramAddress());
-    lstMandatory.append(QtumToken::paramDatahex());
+    lstMandatory.append(VuiCashToken::paramAddress());
+    lstMandatory.append(VuiCashToken::paramDatahex());
     QStringList lstOptional;
-    lstOptional.append(QtumToken::paramSender());
+    lstOptional.append(VuiCashToken::paramSender());
     d->call = new ExecRPCCommand(Token_NS::PRC_CALL, lstMandatory, lstOptional, QMap<QString, QString>());
 
     // Create new send command line interface
     lstMandatory.clear();
-    lstMandatory.append(QtumToken::paramAddress());
-    lstMandatory.append(QtumToken::paramDatahex());
+    lstMandatory.append(VuiCashToken::paramAddress());
+    lstMandatory.append(VuiCashToken::paramDatahex());
     lstOptional.clear();
-    lstOptional.append(QtumToken::paramAmount());
-    lstOptional.append(QtumToken::paramGasLimit());
-    lstOptional.append(QtumToken::paramGasPrice());
-    lstOptional.append(QtumToken::paramSender());
-    lstOptional.append(QtumToken::paramBroadcast());
-    lstOptional.append(QtumToken::paramChangeToSender());
-    lstOptional.append(QtumToken::paramPsbt());
+    lstOptional.append(VuiCashToken::paramAmount());
+    lstOptional.append(VuiCashToken::paramGasLimit());
+    lstOptional.append(VuiCashToken::paramGasPrice());
+    lstOptional.append(VuiCashToken::paramSender());
+    lstOptional.append(VuiCashToken::paramBroadcast());
+    lstOptional.append(VuiCashToken::paramChangeToSender());
+    lstOptional.append(VuiCashToken::paramPsbt());
     d->send = new ExecRPCCommand(Token_NS::PRC_SENDTO, lstMandatory, lstOptional, QMap<QString, QString>());
 
     // Create new event log interface
     d->eventLog = new EventLog();
 
-    setQtumTokenExec(this);
+    setVuiCashTokenExec(this);
 }
 
 Token::~Token()
@@ -163,12 +163,12 @@ bool Token::execEvents(const int64_t &fromBlock, const int64_t &toBlock, const i
             if(numTopics > 1)
             {
                 tokenEvent.sender = topicsList[1].toString().toStdString().substr(24);
-                Token::ToQtumAddress(tokenEvent.sender, tokenEvent.sender);
+                Token::ToVuiCashAddress(tokenEvent.sender, tokenEvent.sender);
             }
             if(numTopics > 2)
             {
                 tokenEvent.receiver = topicsList[2].toString().toStdString().substr(24);
-                Token::ToQtumAddress(tokenEvent.receiver, tokenEvent.receiver);
+                Token::ToVuiCashAddress(tokenEvent.receiver, tokenEvent.receiver);
             }
             tokenEvent.blockHash = uint256S(variantMap.value("blockHash").toString().toStdString());
             tokenEvent.blockNumber = variantMap.value("blockNumber").toLongLong();

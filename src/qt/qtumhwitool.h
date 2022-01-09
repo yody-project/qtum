@@ -6,7 +6,7 @@
 #include <QStringList>
 #include <QList>
 #include <QVariantMap>
-class QtumHwiToolPriv;
+class VuiCashHwiToolPriv;
 class InstallDevicePriv;
 class WalletModel;
 class ExecRPCCommand;
@@ -52,22 +52,22 @@ public:
 };
 
 /**
- * @brief The QtumHwiTool class Communicate with the Qtum Hardware Wallet Interface Tool
+ * @brief The VuiCashHwiTool class Communicate with the VuiCash Hardware Wallet Interface Tool
  */
-class QtumHwiTool : public QObject
+class VuiCashHwiTool : public QObject
 {
     Q_OBJECT
 public:
     /**
-     * @brief QtumHwiTool Constructor
+     * @brief VuiCashHwiTool Constructor
      * @param parent Parent object
      */
-    explicit QtumHwiTool(QObject *parent = nullptr);
+    explicit VuiCashHwiTool(QObject *parent = nullptr);
 
     /**
-     * @brief ~QtumHwiTool Destructor
+     * @brief ~VuiCashHwiTool Destructor
      */
-    ~QtumHwiTool();
+    ~VuiCashHwiTool();
 
     /**
      * @brief enumerate Enumerate hardware wallet devices
@@ -250,7 +250,7 @@ private:
     bool execRPC(ExecRPCCommand* cmd, const QMap<QString, QString>& lstParams, QVariant& result, QString& resultJson);
     void addError(const QString& error);
 
-    QtumHwiToolPriv* d;
+    VuiCashHwiToolPriv* d;
 };
 
 #endif // QTUMHWITOOL_H

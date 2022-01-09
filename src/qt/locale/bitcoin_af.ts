@@ -62,8 +62,8 @@
         <translation>Ontvang adresse</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit is jou Qtum-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
+        <source>These are your VuiCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit is jou VuiCash-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -216,7 +216,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>VuiCashGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;Boodskap</translation>
@@ -310,8 +310,8 @@
         <translation>Herindekseer blokke op skyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Stuur muntstukke na 'n Qtum adres</translation>
+        <source>Send coins to a VuiCash address</source>
+        <translation>Stuur muntstukke na 'n VuiCash adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,12 +346,12 @@
         <translation>Versleutel die private sleutels wat aan u beursie behoort</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Teken boodskappe met u Qtum adresse om te bewys dat u hul besit</translation>
+        <source>Sign messages with your VuiCash addresses to prove you own them</source>
+        <translation>Teken boodskappe met u VuiCash adresse om te bewys dat u hul besit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde Qtum adresse</translation>
+        <source>Verify messages to ensure they were signed with specified VuiCash addresses</source>
+        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde VuiCash adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -422,8 +422,8 @@
         <translation>Op datum</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation>Wys die %1 hulpboodskap om 'n lys met moontlike Qtum bevel-lyn opsies te verkry</translation>
+        <source>Show the %1 help message to get a list with possible VuiCash command-line options</source>
+        <translation>Wys die %1 hulpboodskap om 'n lys met moontlike VuiCash bevel-lyn opsies te verkry</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -500,8 +500,8 @@
         <translation>Beursie is &lt;b&gt;versleutel&lt;/b&gt; en is tans &lt;b&gt;gesluit&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>'n Noodlottige fout het voorgekom. Qtum kan nie langer voortgaan nie en sal afsluit.</translation>
+        <source>A fatal error occurred. VuiCash can no longer continue safely and will quit.</source>
+        <translation>'n Noodlottige fout het voorgekom. VuiCash kan nie langer voortgaan nie en sal afsluit.</translation>
     </message>
 </context>
 <context>
@@ -696,8 +696,8 @@
         <translation>Wysig stuurende adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>Die ingeskrewe adres "%1" is nie 'n geldige Qtum adres nie.</translation>
+        <source>The entered address "%1" is not a valid VuiCash address.</source>
+        <translation>Die ingeskrewe adres "%1" is nie 'n geldige VuiCash adres nie.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -765,8 +765,8 @@
         <translation>Gebruik 'n persoonlike data gids:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>VuiCash</source>
+        <translation>VuiCash</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1069,8 +1069,8 @@
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Voer in 'n Qtum adres (bv. %1)</translation>
+        <source>Enter a VuiCash address (e.g. %1)</source>
+        <translation>Voer in 'n VuiCash adres (bv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1635,8 +1635,8 @@ transaksievertragingsrisiko.</translation>
         <translation>Betalings versoek verstryk.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Waarskuwing: Ongeldige Qtumadres</translation>
+        <source>Warning: Invalid VuiCash address</source>
+        <translation>Waarskuwing: Ongeldige VuiCashadres</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1668,8 +1668,8 @@ Is u seker?</translation>
         <translation>Kies voorheen gebruikte adres</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Die Qtumadres waarheen die betaling gestuur word</translation>
+        <source>The VuiCash address to send the payment to</source>
+        <translation>Die VuiCashadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
         <source>Alt+A</source>

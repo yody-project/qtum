@@ -557,13 +557,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Qtum
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Qtum
-    // Mac: ~/Library/Application Support/Qtum
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\VuiCash
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\VuiCash
+    // Mac: ~/Library/Application Support/VuiCash
     // Unix: ~/.qtum
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Qtum";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "VuiCash";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -573,7 +573,7 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Qtum";
+    return pathRet / "Library/Application Support/VuiCash";
 #else
     // Unix
     return pathRet / ".qtum";
@@ -1166,8 +1166,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-    if (copyright_devs.find("Qtum Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The Qtum Core Developers";
+    if (copyright_devs.find("VuiCash Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The VuiCash Core Developers";
     }
     return strCopyrightHolders;
 }

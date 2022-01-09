@@ -38,20 +38,20 @@ DerivationPathDialog::DerivationPathDialog(QWidget *parent, WalletModel* model, 
     QRegularExpressionValidator *legacyValidator = new QRegularExpressionValidator(ui->txtLegacy);
     legacyValidator->setRegularExpression(regEx);
     ui->txtLegacy->setCheckValidator(legacyValidator);
-    ui->txtLegacy->setText(QtumHwiTool::derivationPathPKH());
-    ui->txtLegacy->setPlaceholderText(QtumHwiTool::derivationPathPKH());
+    ui->txtLegacy->setText(VuiCashHwiTool::derivationPathPKH());
+    ui->txtLegacy->setPlaceholderText(VuiCashHwiTool::derivationPathPKH());
 
     QRegularExpressionValidator *P2SHValidator = new QRegularExpressionValidator(ui->txtP2SH);
     P2SHValidator->setRegularExpression(regEx);
     ui->txtP2SH->setCheckValidator(P2SHValidator);
-    ui->txtP2SH->setText(QtumHwiTool::derivationPathP2SH());
-    ui->txtP2SH->setPlaceholderText(QtumHwiTool::derivationPathP2SH());
+    ui->txtP2SH->setText(VuiCashHwiTool::derivationPathP2SH());
+    ui->txtP2SH->setPlaceholderText(VuiCashHwiTool::derivationPathP2SH());
 
     QRegularExpressionValidator *segWitValidator = new QRegularExpressionValidator(ui->txtSegWit);
     segWitValidator->setRegularExpression(regEx);
     ui->txtSegWit->setCheckValidator(segWitValidator);
-    ui->txtSegWit->setText(QtumHwiTool::derivationPathBech32());
-    ui->txtSegWit->setPlaceholderText(QtumHwiTool::derivationPathBech32());
+    ui->txtSegWit->setText(VuiCashHwiTool::derivationPathBech32());
+    ui->txtSegWit->setPlaceholderText(VuiCashHwiTool::derivationPathBech32());
 
     if(model && create)
     {

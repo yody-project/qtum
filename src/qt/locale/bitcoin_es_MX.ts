@@ -66,8 +66,8 @@
         <translation>Direcciones de recibo</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones de Qtum para enviar pagos. Siempre revisa el monto y la dirección de envío antes de enviar monedas.</translation>
+        <source>These are your VuiCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones de VuiCash para enviar pagos. Siempre revisa el monto y la dirección de envío antes de enviar monedas.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -224,7 +224,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>VuiCashGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje</translation>
@@ -335,8 +335,8 @@ Haga clic para habilitar la actividad de red nuevamente.</translation>
         <translation>El proxy está &lt;b&gt;habilitado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar monedas a una dirección Qtum</translation>
+        <source>Send coins to a VuiCash address</source>
+        <translation>Enviar monedas a una dirección VuiCash</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -371,12 +371,12 @@ Haga clic para habilitar la actividad de red nuevamente.</translation>
         <translation>Cifre las claves privadas que pertenecen a su billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Firme mensajes con sus direcciones de Qtum para demostrar que los posee</translation>
+        <source>Sign messages with your VuiCash addresses to prove you own them</source>
+        <translation>Firme mensajes con sus direcciones de VuiCash para demostrar que los posee</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifique los mensajes para asegurarse de que se firmaron con direcciones de Qtum especificadas.</translation>
+        <source>Verify messages to ensure they were signed with specified VuiCash addresses</source>
+        <translation>Verifique los mensajes para asegurarse de que se firmaron con direcciones de VuiCash especificadas.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -656,8 +656,8 @@ Solicitar pagos (genera códigos QR y qtum: URI)
         <translation>Bienvenido</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>VuiCash</source>
+        <translation>VuiCash</translation>
     </message>
     <message>
         <source>Error</source>
@@ -753,8 +753,8 @@ Solicitar pagos (genera códigos QR y qtum: URI)
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de Qtum.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the VuiCash network.</source>
+        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de VuiCash.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -902,8 +902,8 @@ Solicitar pagos (genera códigos QR y qtum: URI)
         <translation>¡La creación de la transación falló!</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Advertencia: Dirección de Qtum invalida</translation>
+        <source>Warning: Invalid VuiCash address</source>
+        <translation>Advertencia: Dirección de VuiCash invalida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>

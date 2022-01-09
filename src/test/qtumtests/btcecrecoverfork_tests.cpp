@@ -107,17 +107,17 @@ BOOST_AUTO_TEST_CASE(checking_btcecrecover_after_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<QtumTransaction> txs;
-    txs.push_back(createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<VuiCashTransaction> txs;
+    txs.push_back(createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call btc_ecrecover
-    dev::Address proxy = createQtumAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<QtumTransaction> txBtcEcrecover;
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createVuiCashAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<VuiCashTransaction> txBtcEcrecover;
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
 
     // Execute contracts
     auto result = executeBC(txBtcEcrecover);
@@ -141,17 +141,17 @@ BOOST_AUTO_TEST_CASE(checking_btcecrecover_before_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<QtumTransaction> txs;
-    txs.push_back(createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<VuiCashTransaction> txs;
+    txs.push_back(createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call btc_ecrecover
-    dev::Address proxy = createQtumAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<QtumTransaction> txBtcEcrecover;
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createQtumTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createVuiCashAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<VuiCashTransaction> txBtcEcrecover;
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createVuiCashTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
 
      // Execute contracts
     auto result = executeBC(txBtcEcrecover);

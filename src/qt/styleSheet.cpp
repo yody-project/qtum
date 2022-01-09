@@ -18,10 +18,10 @@ static const QString STYLE_FORMAT = ":/styles/%1/%2";
 static const QString STYLE_CONFIG_FORMAT = ":/styles/%1/config";
 static const QColor LINK_COLOR = "#2d9ad0";
 
-class QtumStyle : public QProxyStyle
+class VuiCashStyle : public QProxyStyle
 {
 public:
-    QtumStyle()
+    VuiCashStyle()
     {
         message_info_path = GetStringStyleValue("appstyle/message-info-icon", ":/styles/theme1/app-icons/message_info");
         message_warning_path = GetStringStyleValue("appstyle/message-warning-icon", ":/styles/theme1/app-icons/message_warning");
@@ -126,7 +126,7 @@ void StyleSheet::setStyleSheet(QWidget *widget, const QString &style_name)
 void StyleSheet::setStyleSheet(QApplication *app, const QString& style_name)
 {
     QStyle* mainStyle = QStyleFactory::create("fusion");
-    QtumStyle* qtumStyle = new QtumStyle;
+    VuiCashStyle* qtumStyle = new VuiCashStyle;
     qtumStyle->setBaseStyle(mainStyle);
     app->setStyle(qtumStyle);
 

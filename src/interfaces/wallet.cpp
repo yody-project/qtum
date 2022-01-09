@@ -1390,10 +1390,10 @@ public:
                     if(v.scriptPubKey.HasOpCall()){
                         std::vector<unsigned char> data;
                         v.scriptPubKey.GetData(data);
-                        if(QtumDelegation::IsAddBytecode(data))
+                        if(VuiCashDelegation::IsAddBytecode(data))
                         {
                             std::string hexStaker;
-                            if(!QtumDelegation::GetUnsignedStaker(data, hexStaker))
+                            if(!VuiCashDelegation::GetUnsignedStaker(data, hexStaker))
                             {
                                 error = "Fail to get unsigned staker";
                                 return false;
@@ -1445,7 +1445,7 @@ public:
                 std::vector<unsigned char> data;
                 v.scriptPubKey.GetData(data);
                 CScript scriptRet;
-                if(QtumDelegation::SetSignedStaker(data, PoD) && v.scriptPubKey.SetData(data, scriptRet))
+                if(VuiCashDelegation::SetSignedStaker(data, PoD) && v.scriptPubKey.SetData(data, scriptRet))
                 {
                     v.scriptPubKey = scriptRet;
                 }
@@ -1543,7 +1543,7 @@ public:
     }
 
     std::shared_ptr<CWallet> m_wallet;
-    QtumDelegation m_qtumDelegation;
+    VuiCashDelegation m_qtumDelegation;
 };
 
 class WalletClientImpl : public ChainClient

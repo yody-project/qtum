@@ -1580,7 +1580,7 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
     }
 
     // Get delegation for an address
-    QtumDelegation qtumDelegation;
+    VuiCashDelegation qtumDelegation;
     Delegation delegation;
     uint160 address = uint160(*pkhash);
     if(!qtumDelegation.GetDelegation(address, delegation)) {
@@ -1680,7 +1680,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
     }
 
     // Get delegations for staker
-    QtumDelegation qtumDelegation;
+    VuiCashDelegation qtumDelegation;
     std::vector<DelegationEvent> events;
     uint160 address = uint160(*pkhash);
     DelegationsStakerFilter filter(address);

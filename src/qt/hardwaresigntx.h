@@ -7,10 +7,10 @@
 #include <QList>
 #include <QVariantMap>
 class WalletModel;
-class QtumHwiTool;
+class VuiCashHwiTool;
 
 /**
- * @brief The HardwareSignTx class Communicate with the Qtum Hardware Wallet Interface Tool
+ * @brief The HardwareSignTx class Communicate with the VuiCash Hardware Wallet Interface Tool
  */
 class HardwareSignTx : public QObject
 {
@@ -76,7 +76,7 @@ public Q_SLOTS:
 
 public:
     WalletModel* model = 0;
-    QtumHwiTool* tool = 0;
+    VuiCashHwiTool* tool = 0;
     QString psbt;
     QString hexTx;
     bool complete = false;

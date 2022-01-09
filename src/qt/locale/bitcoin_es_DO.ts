@@ -66,8 +66,8 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones Qtum para realizar pagos. Verifica siempre el monto y la dirección de recepción antes de enviar monedas. </translation>
+        <source>These are your VuiCash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones VuiCash para realizar pagos. Verifica siempre el monto y la dirección de recepción antes de enviar monedas. </translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -214,7 +214,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>VuiCashGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -280,8 +280,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar monedas a una dirección Qtum</translation>
+        <source>Send coins to a VuiCash address</source>
+        <translation>Enviar monedas a una dirección VuiCash</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -316,12 +316,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Qtum para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your VuiCash addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones VuiCash para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Qtum especificas</translation>
+        <source>Verify messages to ensure they were signed with specified VuiCash addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones VuiCash especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -341,7 +341,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Solicitar pagos (genera codigo QR y URL's de Qtum)</translation>
+        <translation>Solicitar pagos (genera codigo QR y URL's de VuiCash)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -408,8 +408,8 @@
         <translation>La billetera está encriptada y bloqueada recientemente</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Ha ocurrido un error crítico. Qtum ya no puede continuar con seguridad y se cerrará.</translation>
+        <source>A fatal error occurred. VuiCash can no longer continue safely and will quit.</source>
+        <translation>Ha ocurrido un error crítico. VuiCash ya no puede continuar con seguridad y se cerrará.</translation>
     </message>
 </context>
 <context>
@@ -592,8 +592,8 @@
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Qtum válida.</translation>
+        <source>The entered address "%1" is not a valid VuiCash address.</source>
+        <translation>La dirección introducida "%1" no es una dirección VuiCash válida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -657,8 +657,8 @@
         <translation>Usa un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>VuiCash</source>
+        <translation>VuiCash</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -725,8 +725,8 @@
         <translation>Experto</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Qtum en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the VuiCash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente VuiCash en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -824,8 +824,8 @@
         <translation>Desde</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Qtum después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the VuiCash network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red VuiCash después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1307,12 +1307,12 @@
         <translation>¡Ha fallado la creación de la transacción!</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Alerta: Dirección de Qtum inválida</translation>
+        <source>Warning: Invalid VuiCash address</source>
+        <translation>Alerta: Dirección de VuiCash inválida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
-        <translation>Alerta: Dirección de Qtum inválida</translation>
+        <translation>Alerta: Dirección de VuiCash inválida</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1412,8 +1412,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Firmar el mensaje para demostrar que se posee esta dirección Qtum</translation>
+        <source>Sign the message to prove you own this VuiCash address</source>
+        <translation>Firmar el mensaje para demostrar que se posee esta dirección VuiCash</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1432,8 +1432,8 @@
         <translation>&amp;Verificar mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Qtum indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified VuiCash address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección VuiCash indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

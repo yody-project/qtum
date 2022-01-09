@@ -285,7 +285,7 @@ public:
     {
         LOCK(::cs_main);
 
-        QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+        VuiCashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
         blockGasLimit = qtumDGP.getBlockGasLimit(::ChainActive().Height());
         minGasPrice = CAmount(qtumDGP.getMinGasPrice(::ChainActive().Height()));
         nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;

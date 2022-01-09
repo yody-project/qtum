@@ -118,18 +118,18 @@ BOOST_FIXTURE_TEST_SUITE(bytecodeexec_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_txs_empty){
     initState();
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     auto result = executeBC(txs);
     BOOST_CHECK(result.first.size() == 0);
 }
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract){
     initState();
-    QtumTransaction txEth = createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txs(1, txEth);
+    VuiCashTransaction txEth = createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txs(1, txEth);
     auto result = executeBC(txs);
     
-    std::vector<dev::Address> addrs = {createQtumAddress(txs[0].getHashWith(), txs[0].getNVout())};
+    std::vector<dev::Address> addrs = {createVuiCashAddress(txs[0].getHashWith(), txs[0].getNVout())};
     valtype code = ParseHex("60606040525b600b5b5b565b0000a165627a7a723058209cedb722bf57a30e3eb00eeefc392103ea791a2001deed29f5c3809ff10eb1dd0029");
     checkExecResult(result.first, 1, 1, dev::eth::TransactionException::None, addrs, code, dev::u256(0));
     checkBCEResult(result.second, 69382, 430618, 1, CAmount(GASLIMIT));
@@ -137,8 +137,8 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract){
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_OutOfGasIntrinsic){
     initState();
-    QtumTransaction txEth = createQtumTransaction(CODE[0], 0, dev::u256(100), dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txs(1, txEth);
+    VuiCashTransaction txEth = createVuiCashTransaction(CODE[0], 0, dev::u256(100), dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txs(1, txEth);
     auto result = executeBC(txs);
 
     std::vector<dev::Address> addrs = {dev::Address()};
@@ -148,8 +148,8 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_OutOfGasIntrinsic){
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_OutOfGas){
     initState();
-    QtumTransaction txEth = createQtumTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txs(1, txEth);
+    VuiCashTransaction txEth = createVuiCashTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txs(1, txEth);
     auto result = executeBC(txs);
 
     std::vector<dev::Address> addrs = {dev::Address()};
@@ -160,12 +160,12 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_OutOfGas){
 BOOST_AUTO_TEST_CASE(bytecodeexec_OutOfGasIntrinsic_create_contract_normal_create_contract){
     initState();
     std::vector<dev::Address> newAddressGen;
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 10; i++){
         dev::u256 gasLimit = i%2 == 0 ? GASLIMIT : dev::u256(100);
-        QtumTransaction txEth = createQtumTransaction(CODE[0], 0, gasLimit, dev::u256(1), hash, dev::Address());
-        newAddressGen.push_back(createQtumAddress(txEth.getHashWith(), txEth.getNVout()));
+        VuiCashTransaction txEth = createVuiCashTransaction(CODE[0], 0, gasLimit, dev::u256(1), hash, dev::Address());
+        newAddressGen.push_back(createVuiCashAddress(txEth.getHashWith(), txEth.getNVout()));
         txs.push_back(txEth);
         ++hash;
     }
@@ -179,12 +179,12 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_OutOfGasIntrinsic_create_contract_normal_creat
 BOOST_AUTO_TEST_CASE(bytecodeexec_OutOfGas_create_contract_normal_create_contract){
     initState();
     std::vector<dev::Address> newAddressGen;
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 10; i++){
         valtype code = i%2 == 0 ? CODE[0] : CODE[1];
-        QtumTransaction txEth = createQtumTransaction(code, 0, GASLIMIT, dev::u256(1), hash, dev::Address());
-        newAddressGen.push_back(createQtumAddress(txEth.getHashWith(), txEth.getNVout()));
+        VuiCashTransaction txEth = createVuiCashTransaction(code, 0, GASLIMIT, dev::u256(1), hash, dev::Address());
+        newAddressGen.push_back(createVuiCashAddress(txEth.getHashWith(), txEth.getNVout()));
         txs.push_back(txEth);
         ++hash;
     }
@@ -198,11 +198,11 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_OutOfGas_create_contract_normal_create_contrac
 BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_many){
     initState();
     std::vector<dev::Address> newAddressGen;
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 130; i++){
-        QtumTransaction txEth = createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
-        newAddressGen.push_back(createQtumAddress(txEth.getHashWith(), txEth.getNVout()));
+        VuiCashTransaction txEth = createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
+        newAddressGen.push_back(createVuiCashAddress(txEth.getHashWith(), txEth.getNVout()));
         txs.push_back(txEth);
         ++hash;
     }
@@ -215,12 +215,12 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_create_contract_many){
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer){
     initState();
-    QtumTransaction txEthCreate = createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txsCreate(1, txEthCreate);
+    VuiCashTransaction txEthCreate = createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txsCreate(1, txEthCreate);
     executeBC(txsCreate);
-    std::vector<dev::Address> addrs = {createQtumAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout())};
-    QtumTransaction txEthCall = createQtumTransaction(ParseHex("00"), 1300, GASLIMIT, dev::u256(1), HASHTX, addrs[0]);
-    std::vector<QtumTransaction> txsCall(1, txEthCall);
+    std::vector<dev::Address> addrs = {createVuiCashAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout())};
+    VuiCashTransaction txEthCall = createVuiCashTransaction(ParseHex("00"), 1300, GASLIMIT, dev::u256(1), HASHTX, addrs[0]);
+    std::vector<VuiCashTransaction> txsCall(1, txEthCall);
     auto result = executeBC(txsCall);
 
     checkExecResult(result.first, 1, 1, dev::eth::TransactionException::None, addrs, valtype(), dev::u256(1300));
@@ -229,12 +229,12 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer){
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_OutOfGasIntrinsic_return_value){
     initState();
-    QtumTransaction txEthCreate = createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txsCreate(1, txEthCreate);
+    VuiCashTransaction txEthCreate = createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txsCreate(1, txEthCreate);
     executeBC(txsCreate);
-    dev::Address newAddress(createQtumAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout()));
-    QtumTransaction txEthCall = createQtumTransaction(ParseHex("00"), 1300, dev::u256(1), dev::u256(1), HASHTX, newAddress);
-    std::vector<QtumTransaction> txsCall(1, txEthCall);
+    dev::Address newAddress(createVuiCashAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout()));
+    VuiCashTransaction txEthCall = createVuiCashTransaction(ParseHex("00"), 1300, dev::u256(1), dev::u256(1), HASHTX, newAddress);
+    std::vector<VuiCashTransaction> txsCall(1, txEthCall);
     auto result = executeBC(txsCall);
 
     std::vector<dev::Address> addrs = {txEthCall.receiveAddress()};
@@ -244,12 +244,12 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_OutOfGasIntrinsic_retur
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_OutOfGas_return_value){
     initState();
-    QtumTransaction txEthCreate = createQtumTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txsCreate(1, txEthCreate);
+    VuiCashTransaction txEthCreate = createVuiCashTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txsCreate(1, txEthCreate);
     executeBC(txsCreate);
-    dev::Address newAddress(createQtumAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout()));
-    QtumTransaction txEthCall = createQtumTransaction(ParseHex("00"), 1300, GASLIMIT, dev::u256(1), HASHTX, newAddress);
-    std::vector<QtumTransaction> txsCall(1, txEthCall);
+    dev::Address newAddress(createVuiCashAddress(txsCreate[0].getHashWith(), txsCreate[0].getNVout()));
+    VuiCashTransaction txEthCall = createVuiCashTransaction(ParseHex("00"), 1300, GASLIMIT, dev::u256(1), HASHTX, newAddress);
+    std::vector<VuiCashTransaction> txsCall(1, txEthCall);
     auto result = executeBC(txsCall);
 
     std::vector<dev::Address> addrs = {txEthCall.receiveAddress()};
@@ -260,21 +260,21 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_OutOfGas_return_value){
 BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_many){
     initState();
     std::vector<dev::Address> newAddressGen;
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 130; i++){
-        QtumTransaction txEth = createQtumTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
-        newAddressGen.push_back(createQtumAddress(txEth.getHashWith(), txEth.getNVout()));
+        VuiCashTransaction txEth = createVuiCashTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
+        newAddressGen.push_back(createVuiCashAddress(txEth.getHashWith(), txEth.getNVout()));
         txs.push_back(txEth);
         ++hash;
     }
     executeBC(txs);
-    std::vector<QtumTransaction> txsCall;
+    std::vector<VuiCashTransaction> txsCall;
     std::vector<dev::Address> addrs;
     valtype codeCall(ParseHex("00"));
     dev::h256 hashCall(HASHTX);
     for(size_t i = 0; i < txs.size(); i++){
-        QtumTransaction txEthCall = createQtumTransaction(codeCall, 1300, GASLIMIT, dev::u256(1), hash, newAddressGen[i], i);
+        VuiCashTransaction txEthCall = createVuiCashTransaction(codeCall, 1300, GASLIMIT, dev::u256(1), hash, newAddressGen[i], i);
         txsCall.push_back(txEthCall);
         addrs.push_back(txEthCall.receiveAddress());
         ++hashCall;
@@ -288,21 +288,21 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_transfer_many){
 BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_OutOfGas_transfer_many_return_value){
     initState();
     std::vector<dev::Address> newAddressGen;
-    std::vector<QtumTransaction> txs;
+    std::vector<VuiCashTransaction> txs;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 130; i++){
-        QtumTransaction txEth = createQtumTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
-        newAddressGen.push_back(createQtumAddress(txEth.getHashWith(), txEth.getNVout()));
+        VuiCashTransaction txEth = createVuiCashTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
+        newAddressGen.push_back(createVuiCashAddress(txEth.getHashWith(), txEth.getNVout()));
         txs.push_back(txEth);
         ++hash;
     }
     executeBC(txs);
-    std::vector<QtumTransaction> txsCall;
+    std::vector<VuiCashTransaction> txsCall;
     std::vector<dev::Address> addrs;
     valtype codeCall(ParseHex("00"));
     dev::h256 hashCall(HASHTX);
     for(size_t i = 0; i < txs.size(); i++){
-        QtumTransaction txEthCall = createQtumTransaction(codeCall, 1300, GASLIMIT, dev::u256(1), hashCall, newAddressGen[i], i);
+        VuiCashTransaction txEthCall = createVuiCashTransaction(codeCall, 1300, GASLIMIT, dev::u256(1), hashCall, newAddressGen[i], i);
         txsCall.push_back(txEthCall);
         addrs.push_back(txEthCall.receiveAddress());
         ++hashCall;
@@ -315,32 +315,32 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_call_contract_OutOfGas_transfer_many_return_va
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_suicide){
     initState();
-    std::vector<QtumTransaction> txsCreate;
+    std::vector<VuiCashTransaction> txsCreate;
     std::vector<dev::Address> newAddresses;
     dev::h256 hash(HASHTX);
     for(size_t i = 0; i < 10; i++){
         valtype code = i == 0 ? CODE[0] : CODE[4];
         dev::u256 value = i == 0 ? dev::u256(0) : dev::u256(13);
-        QtumTransaction txEthCreate = createQtumTransaction(code, 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
+        VuiCashTransaction txEthCreate = createVuiCashTransaction(code, 0, GASLIMIT, dev::u256(1), hash, dev::Address(), i);
         txsCreate.push_back(txEthCreate);
 
-        QtumTransaction txEthSendValue;
+        VuiCashTransaction txEthSendValue;
         if(i != 0){
-            txEthSendValue = createQtumTransaction(valtype(), value, GASLIMIT, dev::u256(1), hash, createQtumAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()), i);
+            txEthSendValue = createVuiCashTransaction(valtype(), value, GASLIMIT, dev::u256(1), hash, createVuiCashAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()), i);
             txsCreate.push_back(txEthSendValue);
         }
 
-        newAddresses.push_back(createQtumAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()));
+        newAddresses.push_back(createVuiCashAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()));
         ++hash;
     }
 
     executeBC(txsCreate);
 
-    std::vector<QtumTransaction> txsCall;
+    std::vector<VuiCashTransaction> txsCall;
     std::vector<dev::Address> addrs;
     valtype codeCall(ParseHex("41c0e1b5"));
     for(size_t i = 0; i < newAddresses.size() - 1; i++){
-        QtumTransaction txEthCall = createQtumTransaction(codeCall, 0, GASLIMIT, dev::u256(1), HASHTX, newAddresses[i + 1]);
+        VuiCashTransaction txEthCall = createVuiCashTransaction(codeCall, 0, GASLIMIT, dev::u256(1), HASHTX, newAddresses[i + 1]);
         txsCall.push_back(txEthCall);
         addrs.push_back(txEthCall.receiveAddress());
     }
@@ -352,15 +352,15 @@ BOOST_AUTO_TEST_CASE(bytecodeexec_suicide){
 
 BOOST_AUTO_TEST_CASE(bytecodeexec_contract_create_contracts){
     initState();
-    QtumTransaction txEthCreate = createQtumTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
-    std::vector<QtumTransaction> txs(1, txEthCreate);
+    VuiCashTransaction txEthCreate = createVuiCashTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), HASHTX, dev::Address());
+    std::vector<VuiCashTransaction> txs(1, txEthCreate);
     executeBC(txs);
-    std::vector<QtumTransaction> txsCall;
+    std::vector<VuiCashTransaction> txsCall;
     valtype codeCall(ParseHex("3f811b80"));
-    dev::Address newAddress(createQtumAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()));
+    dev::Address newAddress(createVuiCashAddress(txEthCreate.getHashWith(), txEthCreate.getNVout()));
     std::vector<dev::Address> addrs;
     for(size_t i = 0; i < 20; i++){
-        QtumTransaction txEthCall = createQtumTransaction(codeCall, 0, GASLIMIT, dev::u256(1), HASHTX, newAddress, i);
+        VuiCashTransaction txEthCall = createVuiCashTransaction(codeCall, 0, GASLIMIT, dev::u256(1), HASHTX, newAddress, i);
         txsCall.push_back(txEthCall);
         addrs.push_back(txEthCall.receiveAddress());
     }
